@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="mmall">
+    <output-path>$PROJECT_DIR$/out/artifacts/mmall/target</output-path>
+    <root id="archive" name="mmall.war" />
+  </artifact>
+</component>
