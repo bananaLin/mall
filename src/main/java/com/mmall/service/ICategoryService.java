@@ -1,16 +1,14 @@
 package com.mmall.service;
 
-import com.mmall.common.ServerResponse;
-import com.mmall.pojo.Category;
-import java.util.List;
+import com.mmall.common.Msg;
 
 public interface ICategoryService {
 
-    ServerResponse addCategory(String categoryName, Integer parentId);
+    Msg addCategory(String categoryName, Integer parentId);
 
-    ServerResponse<List<Category>> getChildrenParallelCategory(Integer CategoryId);
+    Msg getChildrenParallelCategory(Integer CategoryId);
 
-    ServerResponse updateCategoryName(Integer categoryId,String categoryName);
+    Msg updateCategoryName(Integer categoryId,String categoryName);
 
-    ServerResponse<List<Integer>> selectCategoryAndChildrenById(Integer categoryId);
+    Msg selectCategoryAndChildrenById(Integer categoryId);
 }

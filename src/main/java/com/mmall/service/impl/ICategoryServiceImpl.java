@@ -2,7 +2,8 @@ package com.mmall.service.impl;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-import com.mmall.common.ServerResponse;
+import com.mmall.common.Msg;
+import com.mmall.common.Result;
 import com.mmall.dao.CategoryMapper;
 import com.mmall.pojo.Category;
 import com.mmall.service.ICategoryService;
@@ -29,12 +30,12 @@ public class ICategoryServiceImpl implements ICategoryService {
      * @param parentId
      * @return
      */
-    public ServerResponse addCategory(String categoryName, Integer parentId){
+    public Msg addCategory(String categoryName, Integer parentId){
 
         logger.info("categoryName:" + categoryName, "parentId:" + parentId);
 
         if(parentId == null || StringUtils.isBlank(categoryName)){
-            return ServerResponse.createByErrorMessage("参数错误");
+            return Msg.createFailMsg(Result.ERROR_PARAMETER);
         }
 
         Category category = new Category();
@@ -48,9 +49,9 @@ public class ICategoryServiceImpl implements ICategoryService {
         int rowCount = categoryMapper.insert(category);
 
         if(rowCount > 0){
-            return ServerResponse.createBySuccessMessage("创建成功");
+            return Msg.createSucMsg(Result.CREATE_SUCCESS);
         }
-        return ServerResponse.createByErrorMessage("创建失败");
+        return Msg.createFailMsg(Result.CREATE_FAIL);
     }
 
     /**
@@ -60,9 +61,9 @@ public class ICategoryServiceImpl implements ICategoryService {
      * @return
      */
     @Override
-    public ServerResponse updateCategoryName(Integer categoryId, String categoryName) {
+    public Msg updateCategoryName(Integer categoryId, String categoryName) {
         if(categoryId == null || StringUtils.isBlank(categoryName)){
-            return ServerResponse.createByErrorMessage("更新品类参数错误");
+            return Msg.createFailMsg(Result.ERROR_PARAMETER);
         }
         Category category = new Category();
         category.setId(categoryId);
@@ -70,9 +71,9 @@ public class ICategoryServiceImpl implements ICategoryService {
 
         int rowCount = categoryMapper.updateByPrimaryKeySelective(category);
         if(rowCount > 0){
-            return ServerResponse.createBySuccess("更新品类名字成功");
+            return Msg.createSucMsg(Result.UPDATE_SUCCESS);
         }
-        return ServerResponse.createByErrorMessage("更新品类名字失败");
+        return Msg.createFailMsg(Result.UPDATE_FAIL);
     }
 
     /**
@@ -81,9 +82,9 @@ public class ICategoryServiceImpl implements ICategoryService {
      * @return
      */
     @Override
-    public ServerResponse<List<Category>> getChildrenParallelCategory(Integer CategoryId) {
+    public Msg getChildrenParallelCategory(Integer CategoryId) {
         List<Category> categoryList = categoryMapper.selectCategoryChildrenByParentId(CategoryId);
-        return ServerResponse.createBySuccess(categoryList);
+        return Msg.createSucMsg(categoryList);
     }
 
     /**
@@ -91,7 +92,7 @@ public class ICategoryServiceImpl implements ICategoryService {
      * @param categoryId
      * @return
      */
-    public ServerResponse<List<Integer>> selectCategoryAndChildrenById(Integer categoryId){
+    public Msg selectCategoryAndChildrenById(Integer categoryId){
         Set<Category> categorySet = Sets.newHashSet();
         findChildCategory(categorySet,categoryId);
 
@@ -101,7 +102,7 @@ public class ICategoryServiceImpl implements ICategoryService {
                 categoryIdList.add(categoryItem.getId());
             }
         }
-        return ServerResponse.createBySuccess(categoryIdList);
+        return Msg.createSucMsg(categoryIdList);
     }
 
 

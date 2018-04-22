@@ -1,7 +1,6 @@
 package com.mmall.controller;
 
 import com.mmall.common.Const;
-import com.mmall.common.ResponseCode;
 import com.mmall.common.ServerResponse;
 import com.mmall.pojo.User;
 import com.mmall.service.IUserService;
@@ -9,16 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/user/")
-public class UserController {
+public class UserController extends BaseController{
 
     @Autowired
     private IUserService iUserService;
-
-    //LoggerFactory loggerFactory = LoggerFactory.getILoggerFactory("UserController");
 
     /**
      * 登录
@@ -136,9 +134,6 @@ public class UserController {
     @ResponseBody
     public ServerResponse<String> restPassword(HttpSession httpSession, String passwordOld, String passwordNew){
         User user = (User) httpSession.getAttribute(Const.CURRENT_USER);
-        if(user == null){
-            return ServerResponse.createByErrorMessage("用户未登录");
-        }
         return iUserService.restPassword(user, passwordOld, passwordNew);
     }
 
@@ -172,9 +167,6 @@ public class UserController {
     @ResponseBody
     public ServerResponse<User> getInformation(HttpSession httpSession){
         User currentUser = (User) httpSession.getAttribute(Const.CURRENT_USER);
-        if(currentUser == null){
-            return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(), "用户未登录");
-        }
         return iUserService.getInformation(currentUser.getId());
     }
 
