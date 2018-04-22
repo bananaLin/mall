@@ -3,7 +3,6 @@ package com.mmall.controller;
 import com.mmall.common.Const;
 import com.mmall.pojo.User;
 import com.mmall.service.IUserService;
-import com.mmall.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.http.HttpSession;

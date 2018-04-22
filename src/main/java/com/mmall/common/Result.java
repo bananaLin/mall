@@ -34,6 +34,8 @@ public enum Result implements Labeled{
     UPDATE_PRODUCT_STATUS_SUCCESS(205, "修改商品销售状态成功"),
 
     UPDATE_PRODUCT_STATUS_FAIL(206, "修改商品销售状态失败"),
+
+    NO_PRODUCT(207, "商品不存在"),
     //
 
     ;
