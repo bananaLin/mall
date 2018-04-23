@@ -1,7 +1,8 @@
-package com.mmall.controller;
+package com.mmall.controller.app;
 
 import com.mmall.common.Const;
 import com.mmall.common.ServerResponse;
+import com.mmall.controller.BaseController;
 import com.mmall.pojo.User;
 import com.mmall.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,7 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/user/")
-public class UserController extends BaseController{
+public class UserController extends BaseController {
 
     @Autowired
     private IUserService iUserService;

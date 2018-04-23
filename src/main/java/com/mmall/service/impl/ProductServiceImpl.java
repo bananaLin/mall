@@ -3,6 +3,7 @@ package com.mmall.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.google.common.collect.Lists;
+import com.mmall.common.Const;
 import com.mmall.common.Msg;
 import com.mmall.common.Result;
 import com.mmall.dao.CategoryMapper;
@@ -20,6 +21,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -111,14 +113,18 @@ public class ProductServiceImpl implements IProductService {
 
     /**
      * 获取商品列表
+     * @param productName
      * @param pageNo
      * @param pageSize
      * @return
      */
     @Override
-    public Msg listProducts(int pageNo, int pageSize) {
+    public Msg listProducts(String productName, int pageNo, int pageSize) {
         PageHelper.startPage(pageNo, pageSize);
-        List<Product> productList = productMapper.selectList();
+        if(StringUtils.isNotBlank(productName)){
+            productName = new StringBuffer().append("%").append(productName).append("%").toString();
+        }
+        List<Product> productList = productMapper.selectList(productName);
         List<ProductListVo> productListVos = Lists.newArrayList();
         for(Product product : productList){
             ProductListVo productListVo = assembleProductListVo(product);
@@ -126,6 +132,65 @@ public class ProductServiceImpl implements IProductService {
         }
         PageInfo pageInfo = new PageInfo(productList);
         pageInfo.setList(productListVos);
+        return Msg.createSucMsg(pageInfo);
+    }
+
+    @Override
+    public Msg getProductDetail(Integer productId) {
+        if(productId == null){
+            return Msg.createFailMsg(Result.NO_PRODUCT);
+        }
+        Product product = productMapper.selectByPrimaryKey(productId);
+        if(product == null){
+            return Msg.createFailMsg(Result.NO_PRODUCT);
+        }
+        if(product.getStatus() != Const.ProductStatusEnum.ON_SALE.getCode()){
+            return Msg.createFailMsg(Result.NO_PRODUCT);
+        }
+        ProductDetailVo productDetailVo = assembleProductDetailVo(product);
+        return Msg.createSucMsg(productDetailVo);
+    }
+
+    @Override
+    public Msg getProductByKeywordCategory(String keyword, Integer categoryId, int pageNum, int pageSize, String orderBy) {
+        if(categoryId == null){
+            return Msg.createFailMsg(Result.NO_PRODUCT);
+        }
+        List<Integer> categoryIdList = new ArrayList<Integer>();
+
+        if(categoryId != null){
+            Category category = categoryMapper.selectByPrimaryKey(categoryId);
+            if(category == null && StringUtils.isBlank(keyword)){
+                //没有该分类,并且还没有关键字,这个时候返回一个空的结果集,不报错
+                PageHelper.startPage(pageNum,pageSize);
+                List<ProductListVo> productListVoList = Lists.newArrayList();
+                PageInfo pageInfo = new PageInfo(productListVoList);
+                return Msg.createSucMsg(pageInfo);
+            }
+            categoryIdList = (List<Integer>) iCategoryService.selectCategoryAndChildrenById(category.getId()).getData();
+        }
+        if(StringUtils.isNotBlank(keyword)){
+            keyword = new StringBuilder().append("%").append(keyword).append("%").toString();
+        }
+
+        PageHelper.startPage(pageNum,pageSize);
+        //排序处理
+        if(StringUtils.isNotBlank(orderBy)){
+            if(Const.ProductListOrderBy.PRICE_ASC_DESC.contains(orderBy)){
+                String[] orderByArray = orderBy.split("_");
+                PageHelper.orderBy(orderByArray[0]+" "+orderByArray[1]);
+            }
+        }
+        List<Product> productList = productMapper.selectByNameAndCategoryIds(StringUtils.isBlank(keyword)?null:keyword,categoryIdList.size()==0?null:categoryIdList);
+
+        List<ProductListVo> productListVoList = Lists.newArrayList();
+        for(Product product : productList){
+            ProductListVo productListVo = assembleProductListVo(product);
+            productListVoList.add(productListVo);
+        }
+
+        PageInfo pageInfo = new PageInfo(productList);
+        pageInfo.setList(productListVoList);
         return Msg.createSucMsg(pageInfo);
     }
 

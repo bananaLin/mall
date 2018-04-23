@@ -12,5 +12,9 @@ public interface IProductService {
 
     Msg manageProductDetail(Integer productId);
 
-    Msg listProducts(int pageNo, int pageSize);
+    Msg listProducts(String productName, int pageNo, int pageSize);
+
+    Msg getProductDetail(Integer productId);
+
+    Msg getProductByKeywordCategory(String keyword, Integer categoryId, int pageNum, int pageSize, String orderBy);
 }
