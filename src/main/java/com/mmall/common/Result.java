@@ -36,7 +36,9 @@ public enum Result implements Labeled{
     UPDATE_PRODUCT_STATUS_FAIL(206, "修改商品销售状态失败"),
 
     NO_PRODUCT(207, "商品不存在"),
-    //
+
+    //购物车模块 300 - 399
+    ADD_CART_SUCCESS(300, "添加购物车成功"),
 
     ;
 
