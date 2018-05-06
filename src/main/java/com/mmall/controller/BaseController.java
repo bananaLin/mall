@@ -4,7 +4,6 @@ import com.mmall.common.Const;
 import com.mmall.pojo.User;
 import com.mmall.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.servlet.http.HttpSession;
 
 //抽取重复代码

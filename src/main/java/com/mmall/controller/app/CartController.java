@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/cart/")
+@RequestMapping("/cart")
 public class CartController extends BaseController{
 
     @Autowired
     private ICartService iCartService;
 
-    @RequestMapping("add_cart.do")
+    @RequestMapping("/add_cart.do")
     @ResponseBody
     public Msg addCart(HttpSession httpSession, Integer productId, Integer count){
         Integer userId = this.getCurrentUserId(httpSession);
@@ -40,7 +40,7 @@ public class CartController extends BaseController{
      * @param httpSession
      * @return
      */
-    @RequestMapping("list_products.do")
+    @RequestMapping("/list_products.do")
     @ResponseBody
     public Msg listProducts(HttpSession httpSession){
         Integer userId = this.getCurrentUserId(httpSession);
@@ -48,7 +48,7 @@ public class CartController extends BaseController{
         return Msg.createSucMsg(cartVo);
     }
 
-    @RequestMapping("update_cart.do")
+    @RequestMapping("/update_cart.do")
     @ResponseBody
     public Msg updateCart(HttpSession httpSession, Integer productId, Integer count){
         Integer userId = this.getCurrentUserId(httpSession);
@@ -63,7 +63,7 @@ public class CartController extends BaseController{
         return Msg.createSucMsg(result);
     }
 
-    @RequestMapping("list_cart.do")
+    @RequestMapping("/list_cart.do")
     @ResponseBody
     public Msg list(HttpSession httpSession){
         Integer userId = this.getCurrentUserId(httpSession);
@@ -77,7 +77,7 @@ public class CartController extends BaseController{
      * @param productIds
      * @return
      */
-    @RequestMapping("delete_cart.do")
+    @RequestMapping("/delete_cart.do")
     @ResponseBody
     public Msg delete_cart(HttpSession httpSession, String productIds){
         Integer userId = this.getCurrentUserId(httpSession);
@@ -93,7 +93,7 @@ public class CartController extends BaseController{
      * @param httpSession
      * @return
      */
-    @RequestMapping("select_all.do")
+    @RequestMapping("/select_all.do")
     @ResponseBody
     public Msg selectAll(HttpSession httpSession, Integer checked){
         Integer userId = this.getCurrentUserId(httpSession);
@@ -109,7 +109,7 @@ public class CartController extends BaseController{
      * @param httpSession
      * @return
      */
-    @RequestMapping("select.do")
+    @RequestMapping("/select.do")
     @ResponseBody
     public Msg select(HttpSession httpSession, Integer productId){
         Integer userId = this.getCurrentUserId(httpSession);
@@ -125,7 +125,7 @@ public class CartController extends BaseController{
      * @param httpSession
      * @return
      */
-    @RequestMapping("get_count.do")
+    @RequestMapping("/get_count.do")
     @ResponseBody
     public Msg getCount(HttpSession httpSession){
         Integer userId = this.getCurrentUserId(httpSession);

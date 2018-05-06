@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/user/")
+@RequestMapping("/user")
 public class UserController extends BaseController {
 
     @Autowired
@@ -26,7 +26,7 @@ public class UserController extends BaseController {
      * @param httpSession
      * @return
      */
-    @RequestMapping(value = "login.do")
+    @RequestMapping(value = "/login.do")
     @ResponseBody
     public ServerResponse<User> login(String username, String password, HttpSession httpSession){
 
@@ -42,7 +42,7 @@ public class UserController extends BaseController {
      * @param httpSession
      * @return
      */
-    @RequestMapping(value = "logout.do")
+    @RequestMapping(value = "/logout.do")
     @ResponseBody
     public ServerResponse<String> logout(HttpSession httpSession){
         httpSession.removeAttribute(Const.CURRENT_USER);
@@ -54,7 +54,7 @@ public class UserController extends BaseController {
      * @param user
      * @return
      */
-    @RequestMapping(value = "register.do")
+    @RequestMapping(value = "/register.do")
     @ResponseBody
     public ServerResponse<String> register(User user){
         return iUserService.register(user);
@@ -66,7 +66,7 @@ public class UserController extends BaseController {
      * @param type
      * @return
      */
-    @RequestMapping(value = "check_valid.do")
+    @RequestMapping(value = "/check_valid.do")
     @ResponseBody
     public ServerResponse<String> checkValid(String str,String type){
         return iUserService.checkValid(str, type);
@@ -77,7 +77,7 @@ public class UserController extends BaseController {
      * @param httpSession
      * @return
      */
-    @RequestMapping(value = "get_user_info.do")
+    @RequestMapping(value = "/get_user_info.do")
     @ResponseBody
     public ServerResponse<User> getUserInfo(HttpSession httpSession){
         User user = (User) httpSession.getAttribute(Const.CURRENT_USER);
@@ -92,7 +92,7 @@ public class UserController extends BaseController {
      * @param username
      * @return
      */
-    @RequestMapping(value = "forget_get_question.do")
+    @RequestMapping(value = "/forget_get_question.do")
     @ResponseBody
     public ServerResponse forgetGetQuestion(String username){
         return iUserService.selectForgetQuestion(username);
@@ -105,7 +105,7 @@ public class UserController extends BaseController {
      * @param answer
      * @return
      */
-    @RequestMapping(value = "forget_check_answer.do")
+    @RequestMapping(value = "/forget_check_answer.do")
     @ResponseBody
     public ServerResponse<String> forgetCheckAnswer(String username, String question, String answer){
         return iUserService.checkAnswer(username, question, answer);
@@ -118,7 +118,7 @@ public class UserController extends BaseController {
      * @param forgetToken
      * @return
      */
-    @RequestMapping(value = "forget_rest_password.do")
+    @RequestMapping(value = "/forget_rest_password.do")
     @ResponseBody
     public ServerResponse<String> forgetRestPassword(String username, String passwordNew, String forgetToken){
         return iUserService.forgetRestPassword(username, passwordNew, forgetToken);
@@ -131,7 +131,7 @@ public class UserController extends BaseController {
      * @param passwordNew
      * @return
      */
-    @RequestMapping(value = "rest_password.do")
+    @RequestMapping(value = "/rest_password.do")
     @ResponseBody
     public ServerResponse<String> restPassword(HttpSession httpSession, String passwordOld, String passwordNew){
         User user = (User) httpSession.getAttribute(Const.CURRENT_USER);
@@ -144,7 +144,7 @@ public class UserController extends BaseController {
      * @param user
      * @return
      */
-    @RequestMapping(value = "update_information.do")
+    @RequestMapping(value = "/update_information.do")
     @ResponseBody
     public ServerResponse<User> updateInformation(HttpSession httpSession, User user){
         User currentUser = (User) httpSession.getAttribute(Const.CURRENT_USER);
@@ -164,7 +164,7 @@ public class UserController extends BaseController {
      * @param httpSession
      * @return
      */
-    @RequestMapping(value = "get_information.do")
+    @RequestMapping(value = "/get_information.do")
     @ResponseBody
     public ServerResponse<User> getInformation(HttpSession httpSession){
         User currentUser = (User) httpSession.getAttribute(Const.CURRENT_USER);

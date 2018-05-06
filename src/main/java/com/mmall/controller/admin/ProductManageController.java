@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/manage/product/")
+@RequestMapping("/manage/product")
 public class ProductManageController extends BaseController{
 
     @Autowired
@@ -34,7 +34,7 @@ public class ProductManageController extends BaseController{
      * @param product
      * @return
      */
-    @RequestMapping("save_product.do")
+    @RequestMapping("/save_product.do")
     @ResponseBody
     public Msg saveProduct(HttpSession httpSession, Product product){
         boolean isAdmin = this.isAdmin(httpSession);
@@ -50,7 +50,7 @@ public class ProductManageController extends BaseController{
      * @param status
      * @return
      */
-    @RequestMapping("update_product_status.do")
+    @RequestMapping("/update_product_status.do")
     @ResponseBody
     public Msg updateProductStatus(HttpSession httpSession, Integer productId, Integer status){
         boolean isAdmin = this.isAdmin(httpSession);
@@ -60,7 +60,7 @@ public class ProductManageController extends BaseController{
         return Msg.createFailMsg(Result.NOT_ALLOW);
     }
 
-    @RequestMapping("detail.do")
+    @RequestMapping("/detail.do")
     @ResponseBody
     public Msg getDetail(HttpSession httpSession, Integer productId){
         boolean isAdmin = this.isAdmin(httpSession);
@@ -73,7 +73,7 @@ public class ProductManageController extends BaseController{
         }
     }
 
-    @RequestMapping("list.do")
+    @RequestMapping("/list.do")
     @ResponseBody
     public Msg getList(HttpSession httpSession, String productName, @RequestParam(value = "pageNo", defaultValue = "1") int pageNo, @RequestParam(value = "pageSize",defaultValue = "10") int pageSize){
         boolean isAdmin = this.isAdmin(httpSession);

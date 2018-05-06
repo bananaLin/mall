@@ -9,17 +9,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import javax.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/manage/category/")
+@RequestMapping("/manage/category")
 public class CategoryManageController extends BaseController{
 
     @Autowired
     private ICategoryService iCategoryService;
 
-    @RequestMapping("add_category.do")
+    @RequestMapping("/add_category.do")
     @ResponseBody
     public Msg addCategory(HttpSession httpSession, String categoryName, @RequestParam(value="parentId", defaultValue = "0") int parentId){
         boolean isAdmin = this.isAdmin(httpSession);
@@ -30,7 +29,7 @@ public class CategoryManageController extends BaseController{
         }
     }
 
-    @RequestMapping("set_category_name.do")
+    @RequestMapping("/set_category_name.do")
     @ResponseBody
     public Msg setCategoryName(HttpSession httpSession, Integer categoryId, String categoryName) {
         boolean isAdmin = this.isAdmin(httpSession);
@@ -42,7 +41,7 @@ public class CategoryManageController extends BaseController{
         }
     }
 
-    @RequestMapping("get_category.do")
+    @RequestMapping("/get_category.do")
     @ResponseBody
     public Msg getChildrenParallelCategory(HttpSession httpSession, @RequestParam(value = "categoryId", defaultValue = "0") Integer categoryId) {
         boolean isAdmin = this.isAdmin(httpSession);
@@ -54,7 +53,7 @@ public class CategoryManageController extends BaseController{
         }
     }
 
-    @RequestMapping("get_deep_category.do")
+    @RequestMapping("/get_deep_category.do")
     @ResponseBody
     public Msg getCategoryAndDeepChildrenCategory(HttpSession httpSession, @RequestParam(value = "categoryId", defaultValue = "0") Integer categoryId) {
         boolean isAdmin = this.isAdmin(httpSession);
