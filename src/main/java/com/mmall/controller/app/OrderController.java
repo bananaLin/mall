@@ -17,23 +17,27 @@ public class OrderController extends BaseController{
     @Autowired
     private IOrderService iOrderService;
 
+    
     @RequestMapping("/add_order.do")
     @ResponseBody
     public Msg addCart(HttpSession httpSession, List<Integer> productIds, long amount){
         Integer userId = this.getCurrentUserId(httpSession);
 
-        if(productId == null){
+        if(productIds == null || productIds.size() == 0){
             return Msg.createFailMsg(Result.NO_PRODUCT);
         }
-        if(count == null || count < 0){
+        if(amount == null || amount < 0){
             return Msg.createFailMsg(Result.ERROR_PARAMETER);
         }
-        iCartService.addCart(userId, productId, count);
+        iOrderService.addCart(userId, productId, count);
         return Msg.createSucMsg();
     }
 
+    public Msg pay(HttpSession httpSession){
+    }
+    
     /**
-     * 列出购物车里所有商品
+     * 列出订单
      * @param httpSession
      * @return
      */
@@ -45,89 +49,6 @@ public class OrderController extends BaseController{
         return Msg.createSucMsg(cartVo);
     }
 
-    @RequestMapping("/update_cart.do")
-    @ResponseBody
-    public Msg updateCart(HttpSession httpSession, Integer productId, Integer count){
-        Integer userId = this.getCurrentUserId(httpSession);
-
-        if(productId == null){
-            return Msg.createFailMsg(Result.NO_PRODUCT);
-        }
-        if(count == null || count < 0){
-            return Msg.createFailMsg(Result.ERROR_PARAMETER);
-        }
-        boolean result = iCartService.updateCart(userId, productId, count);
-        return Msg.createSucMsg(result);
-    }
-
-    @RequestMapping("/list_cart.do")
-    @ResponseBody
-    public Msg list(HttpSession httpSession){
-        Integer userId = this.getCurrentUserId(httpSession);
-        CartVo cartVo = iCartService.listCart(userId);
-        return Msg.createSucMsg(cartVo);
-    }
-
-    /**
-     * 在购物车删除商品
-     * @param httpSession
-     * @param productIds
-     * @return
-     */
-    @RequestMapping("/delete_cart.do")
-    @ResponseBody
-    public Msg delete_cart(HttpSession httpSession, String productIds){
-        Integer userId = this.getCurrentUserId(httpSession);
-        if(StringUtils.isBlank(productIds)){
-            return Msg.createSucMsg(Result.ERROR_PARAMETER);
-        }
-        boolean result = iCartService.deleteCart(userId, productIds);
-        return Msg.createSucMsg(result);
-    }
-
-    /**
-     * 全选中/取消全选
-     * @param httpSession
-     * @return
-     */
-    @RequestMapping("/select_all.do")
-    @ResponseBody
-    public Msg selectAll(HttpSession httpSession, Integer checked){
-        Integer userId = this.getCurrentUserId(httpSession);
-        if(checked == null){
-            return Msg.createSucMsg(Result.ERROR_PARAMETER);
-        }
-        CartVo cartVo = iCartService.selectOrUnSelectAll(userId, null, checked);
-        return Msg.createSucMsg(cartVo);
-    }
-
-    /**
-     * 选指定商品
-     * @param httpSession
-     * @return
-     */
-    @RequestMapping("/select.do")
-    @ResponseBody
-    public Msg select(HttpSession httpSession, Integer productId){
-        Integer userId = this.getCurrentUserId(httpSession);
-        if(productId == null){
-            return Msg.createSucMsg(Result.ERROR_PARAMETER);
-        }
-        CartVo cartVo = iCartService.selectOrUnSelect(userId, productId);
-        return Msg.createSucMsg(cartVo);
-    }
-
-    /**
-     * 统计购车车商品数量
-     * @param httpSession
-     * @return
-     */
-    @RequestMapping("/get_count.do")
-    @ResponseBody
-    public Msg getCount(HttpSession httpSession){
-        Integer userId = this.getCurrentUserId(httpSession);
-        Integer count = iCartService.getCount(userId);
-        return Msg.createSucMsg(count);
-    }
+   
 
 }
