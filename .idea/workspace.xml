@@ -7,21 +7,70 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9be4687c-19a2-4d24-8cd2-0f212d1b9581" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/alipay-trade-sdk-20161215-source.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/alipay-trade-sdk-20161215.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alipay_sdk_alipay_sdk_java_3_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mmall/controller/app/OrderController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mmall/service/IOrderService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mmall/service/IShippingService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mmall/service/impl/OrderServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mmall/service/impl/ShippingImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/mmall_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/mmall_war_exploded.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/common/Const$AlipayCallback.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/common/Const$Cart.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/common/Const$OrderStatusEnum.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/common/Const$PayPlatformEnum.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/common/Const$PaymentTypeEnum.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/common/Const$ProductListOrderBy.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/common/Const$ProductStatusEnum.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/common/Const$Role.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/common/Const.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/common/Labeled.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/common/Msg.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/common/ResponseCode.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/common/Result.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/common/ServerResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/common/TokenCache$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/common/TokenCache.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/common/UserInterceptor.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/controller/BaseController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/controller/admin/CategoryManageController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/controller/admin/ProductManageController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/controller/admin/UserManageController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/controller/app/CartController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/controller/app/ProductController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/controller/app/UserController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/dao/CartMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/dao/CategoryMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/dao/OrderItemMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/dao/OrderMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/dao/PayInfoMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/dao/ProductMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/dao/ShippingMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/dao/UserMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/pojo/Cart.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/pojo/Category.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/pojo/Order.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/pojo/OrderItem.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/pojo/PayInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/pojo/Product.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/pojo/Shipping.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/pojo/User.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/service/ICartService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/service/ICategoryService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/service/IFileService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/service/IProductService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/service/IUserService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/service/impl/CartServiceImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/service/impl/CategoryServiceImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/service/impl/FileServiceImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/service/impl/ProductServiceImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/service/impl/UserServiceImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/util/BigDecimalUtil.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/util/DateTimeUtil.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/util/FTPUtil.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/util/MD5Util.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/util/PropertiesUtil.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/vo/CartProductVo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/vo/CartVo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/vo/OrderItemVo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/vo/OrderProductVo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/vo/OrderVo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/vo/ProductDetailVo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/vo/ProductListVo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mmall/vo/ShippingVo.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mmall.iml" afterPath="$PROJECT_DIR$/mmall.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mmall/common/Result.java" afterPath="$PROJECT_DIR$/src/main/java/com/mmall/common/Result.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mmall/common/UserInterceptor.java" afterPath="$PROJECT_DIR$/src/main/java/com/mmall/common/UserInterceptor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mmall/controller/app/ShippingController.java" afterPath="$PROJECT_DIR$/src/main/java/com/mmall/controller/app/ShippingController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -37,7 +86,7 @@
       <file leaf-file-name="ShippingController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mmall/controller/app/ShippingController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="170">
               <caret line="10" column="60" lean-forward="false" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
               <folding />
             </state>
@@ -60,18 +109,6 @@
             <state relative-caret-position="306">
               <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/alipay/demo/trade/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2227">
-              <caret line="31" column="3" lean-forward="true" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -104,16 +141,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DemoHbRunner.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/alipay/demo/trade/DemoHbRunner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-102">
-              <caret line="0" column="30" lean-forward="true" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -290,8 +317,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -323,15 +349,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mmall" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="mmall" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -340,7 +357,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="mmall" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -350,7 +366,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="mmall" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
@@ -361,7 +376,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="mmall" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -371,7 +385,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="mmall" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
@@ -406,7 +419,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -627,6 +641,7 @@
       <workItem from="1525591261256" duration="14365000" />
       <workItem from="1525701610127" duration="72000" />
       <workItem from="1525782703039" duration="4309000" />
+      <workItem from="1526399118636" duration="115000" />
     </task>
     <task id="LOCAL-00001" summary="配置数据源">
       <created>1523009201319</created>
@@ -653,7 +668,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120974000" />
+    <option name="totallyTimeSpent" value="121089000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -680,7 +695,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1638796" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2473525" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25113463" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -733,21 +748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2839">
           <caret line="167" column="10" lean-forward="false" selection-start-line="167" selection-start-column="10" selection-end-line="167" selection-end-column="10" />
-          <folding>
-            <marker date="1523976147169" expanded="true" signature="1323:1429" ph="select from mmall_user" />
-            <marker date="1523976147169" expanded="true" signature="1516:1576" ph="delete from " />
-            <marker date="1523976147169" expanded="true" signature="1653:2053" ph="insert into mmall_user... " />
-            <marker date="1523976147169" expanded="true" signature="3814:4719" ph="update mmall... " />
-            <marker date="1523976147169" expanded="true" signature="4808:5250" ph="update mmall... " />
-            <marker date="1523976147169" expanded="true" signature="5344:5408" ph="select count... mmall_user" />
-            <marker date="1523976147169" expanded="true" signature="5494:5552" ph="select count... mmall_user" />
-            <marker date="1523976147169" expanded="true" signature="5645:5776" ph="SELECT from mmall_user" />
-            <marker date="1523976147169" expanded="true" signature="5879:5951" ph="select quest... mmall_user" />
-            <marker date="1523976147169" expanded="true" signature="6034:6162" ph="SELECT count... mmall_user" />
-            <marker date="1523976147169" expanded="true" signature="6241:6345" ph="update mmall... " />
-            <marker date="1523976147169" expanded="true" signature="6430:6525" ph="SELECT count... mmall_user" />
-            <marker date="1523976147169" expanded="true" signature="6616:6698" ph="select count... mmall_user" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -820,14 +820,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3179">
           <caret line="187" column="35" lean-forward="false" selection-start-line="187" selection-start-column="35" selection-end-line="187" selection-end-column="35" />
-          <folding>
-            <marker date="1524404707346" expanded="true" signature="1528:1637" ph="select from mmall_product" />
-            <marker date="1524404707346" expanded="true" signature="1724:1787" ph="delete from " />
-            <marker date="1524404707346" expanded="true" signature="1867:2372" ph="insert into mmall_product... " />
-            <marker date="1524404707346" expanded="true" signature="4457:5568" ph="update mmall... " />
-            <marker date="1524404707346" expanded="true" signature="5660:6206" ph="update mmall... " />
-            <marker date="1524404707346" expanded="true" signature="6298:6387" ph="SELECT from mmall_product" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -863,7 +855,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -914,19 +905,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
           <caret line="164" column="0" lean-forward="true" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
-          <folding>
-            <marker date="1525596845455" expanded="true" signature="1083:1189" ph="select from mmall_cart" />
-            <marker date="1525596845455" expanded="true" signature="1276:1336" ph="delete from " />
-            <marker date="1525596845455" expanded="true" signature="1413:1701" ph="insert into mmall_cart... " />
-            <marker date="1525596845455" expanded="true" signature="3048:3694" ph="update mmall... " />
-            <marker date="1525596845455" expanded="true" signature="3783:4106" ph="update mmall... " />
-            <marker date="1525596845455" expanded="true" signature="4215:4345" ph="SELECT from mmall_cart" />
-            <marker date="1525596845455" expanded="true" signature="4446:4542" ph="SELECT from mmall_cart" />
-            <marker date="1525596845455" expanded="true" signature="4652:4726" ph="SELECT count... mmall_cart" />
-            <marker date="1525596845455" expanded="true" signature="5428:5485" ph="select IFNUL... " />
-            <marker date="1525596845455" expanded="true" signature="5428:5501" ph="SELECT COUNT... mmall_cart" />
-            <marker date="1525596845455" expanded="true" signature="5607:5723" ph="SELECT from mmall_cart" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -999,7 +977,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="15" column="82" lean-forward="false" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1007,7 +984,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="34" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1022,17 +998,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="38" column="7" lean-forward="false" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
-          <folding>
-            <marker date="1492479248000" expanded="true" signature="1642:1752" ph="select from mmall_shipping" />
-            <marker date="1492479248000" expanded="true" signature="1839:1903" ph="delete from " />
-            <marker date="1492479248000" expanded="true" signature="2024:2642" ph="insert into mmall_shipping... " />
-            <marker date="1492479248000" expanded="true" signature="4948:6225" ph="update mmall... " />
-            <marker date="1492479248000" expanded="true" signature="6318:6977" ph="update mmall... " />
-            <marker date="1492479248000" expanded="true" signature="7056:7141" ph="DELETE FROM " />
-            <marker date="1492479248000" expanded="true" signature="7232:7898" ph="update mmall... " />
-            <marker date="1492479248000" expanded="true" signature="8004:8131" ph="SELECT from mmall_shipping" />
-            <marker date="1492479248000" expanded="true" signature="8227:8327" ph="SELECT from mmall_shipping" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1040,7 +1005,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1069,7 +1033,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mmall/controller/app/ShippingController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="170">
           <caret line="10" column="60" lean-forward="false" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
           <folding />
         </state>
@@ -1085,30 +1049,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alipay/config/AlipayConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alipay/trade/Alipay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alipay/trade/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="50" column="18" lean-forward="false" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alipay/config/AlipayConfig.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alipay/trade/Alipay.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alipay/trade/Main.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1119,7 +1062,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alipay/demo/trade/DemoHbRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
+        <state relative-caret-position="0">
           <caret line="0" column="30" lean-forward="true" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
           <folding />
         </state>
@@ -1127,11 +1070,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alipay/demo/trade/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2227">
-          <caret line="31" column="3" lean-forward="true" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="31" column="3" lean-forward="false" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
