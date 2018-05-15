@@ -1,5 +1,6 @@
 package com.mmall.controller.app;
 
+<<<<<<< HEAD
 import com.mmall.common.Msg;
 import com.mmall.common.Result;
 import com.mmall.controller.BaseController;
@@ -115,5 +116,21 @@ public class ShippingController extends BaseController{
         Integer userId = this.getCurrentUserId(httpSession);
         boolean result = iShippingService.deleteAll(userId);
         return Msg.createSucMsg(result);
+=======
+@Controller
+@RequestMapping("/app/shipping")
+public class ShippingController {
+
+    @Autowrite
+    ShippingService shippingService;
+  
+    @RequestMapping("/add.do")
+    public Msg add(HttpSession httpSession, Shipping shpping){
+        if(shpping == null){
+            return null;
+        }
+        boolean result = shippingService.add(shpping);
+        return null;
+>>>>>>> 41867618204e3cd6b2aa658c08bf3c6fd620760a
     }
 }
