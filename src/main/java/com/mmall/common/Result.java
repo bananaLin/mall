@@ -18,28 +18,36 @@ public enum Result implements Labeled{
 
     UPDATE_SUCCESS(6, "更新成功"),
 
-    // 用户模块 100 - 199
+    // 用户模块 1000 - 1999
 
-    // 商品模块 200 - 299
-    PRODUCT_NOT_ALLOW_NULL(200, "商品不能为空"),
+    // 商品模块 2000 - 2999
+    PRODUCT_NOT_ALLOW_NULL(2000, "商品不能为空"),
 
-    SAVE_PRODUCT_SUCCESS(201, "添加商品成功"),
+    SAVE_PRODUCT_SUCCESS(2001, "添加商品成功"),
 
-    SAVE_PRODUCT_FAIL(202, "添加商品失败"),
+    SAVE_PRODUCT_FAIL(2002, "添加商品失败"),
 
-    UPDATE_PRODUCT_SUCCESS(203, "更新商品成功"),
+    UPDATE_PRODUCT_SUCCESS(2003, "更新商品成功"),
 
-    PRODUCT_OR_STATUS_IS_NULL(204, "商品ID或状态为空"),
+    PRODUCT_OR_STATUS_IS_NULL(2004, "商品ID或状态为空"),
 
-    UPDATE_PRODUCT_STATUS_SUCCESS(205, "修改商品销售状态成功"),
+    UPDATE_PRODUCT_STATUS_SUCCESS(2005, "修改商品销售状态成功"),
 
-    UPDATE_PRODUCT_STATUS_FAIL(206, "修改商品销售状态失败"),
+    UPDATE_PRODUCT_STATUS_FAIL(2006, "修改商品销售状态失败"),
 
-    NO_PRODUCT(207, "商品不存在"),
+    NO_PRODUCT(2007, "商品不存在"),
 
-    //购物车模块 300 - 399
-    ADD_CART_SUCCESS(300, "添加购物车成功"),
+    // 购物车模块 3000 - 3999
+    ADD_CART_SUCCESS(3000, "添加购物车成功"),
 
+    // 收货地址 4000 - 4999
+    ADD_SHIPPING_FAIL(4000, "添加收货地址失败"),
+
+    UPDATE_SHIPPING_FAIL(4001, "更新收货地址失败"),
+
+    SHIPPING_USER_ID_COULD_BE_NULL(4002, "收货人ID不能为空"),
+
+    SHIPPING_COULD_BE_NULL(4003, "收货地址不能为空"),
     ;
 
     private Integer code;
