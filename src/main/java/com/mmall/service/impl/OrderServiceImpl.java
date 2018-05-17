@@ -4,9 +4,10 @@ import com.mmall.dao.OrderMapper;
 import com.mmall.pojo.Order;
 import com.mmall.service.IOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Service;
 import java.util.List;
 
+@Service
 public class OrderServiceImpl implements IOrderService{
 
     @Autowired

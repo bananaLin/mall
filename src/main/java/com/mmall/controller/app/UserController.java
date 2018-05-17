@@ -171,6 +171,9 @@ public class UserController extends BaseController {
         return iUserService.getInformation(currentUser.getId());
     }
 
-
+    @RequestMapping(value = "/allow/index.do")
+    public String index(){
+        return "/WEB-INF/views/view/login.jsp";
+    }
 
 }
