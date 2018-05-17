@@ -236,6 +236,14 @@
     ORDER BY  create_time desc
   </select>
 
+  <select id="selectPrePayOrder" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM mmall_order
+    WHERE status = 10
+    ORDER BY  create_time desc
+  </select>
+
 
 
 

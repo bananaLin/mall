@@ -5,6 +5,8 @@ import com.mmall.pojo.Order;
 import com.mmall.service.IOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 public class OrderServiceImpl implements IOrderService{
 
     @Autowired
@@ -33,5 +35,15 @@ public class OrderServiceImpl implements IOrderService{
             return false;
         }
         return orderMapper.deleteByPrimaryKey(orderId) > 0;
+    }
+
+    @Override
+    public List<Order> listOrder(Integer userId) {
+        return orderMapper.selectByUserId(userId);
+    }
+
+    @Override
+    public List<Order> listPrePayOrder(Integer userId) {
+        return orderMapper.selectPrePayOrder(userId);
     }
 }

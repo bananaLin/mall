@@ -26,7 +26,7 @@ public class UserInterceptor implements HandlerInterceptor{
             if(url.indexOf("login") != -1 || url.indexOf("register") != -1){
                 return true;
             }
-            httpServletRequest.getRequestDispatcher("/WEB-INF/view/login.jsp").forward(httpServletRequest, httpServletResponse);
+            httpServletRequest.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(httpServletRequest, httpServletResponse);
             return false;
         }
         logger.info("[当前用户为] user:" + user.getUsername() + "身份为：" + user.getRole());
