@@ -13,4 +13,6 @@ public interface IOrderService {
     List<Order> listOrder(Integer userId);
 
     List<Order> listPrePayOrder(Integer userId);
+
+    String pay(Long orderNo, Integer userId, String path);
 }

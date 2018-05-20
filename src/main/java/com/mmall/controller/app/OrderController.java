@@ -30,12 +30,6 @@ public class OrderController extends BaseController{
         return Msg.createSucMsg();
     }
 
-    @RequestMapping("/pay.do")
-    @ResponseBody
-    public Msg pay(HttpSession httpSession, Order order){
-        return null;
-    }
-
     @RequestMapping("/get_prepay_order.do")
     @ResponseBody
     public Msg getPrePayOrder(HttpSession httpSession){
@@ -50,5 +44,13 @@ public class OrderController extends BaseController{
         Integer userId = this.getCurrentUserId(httpSession);
         List<Order> orders = iOrderService.listOrder(userId);
         return Msg.createSucMsg(orders);
+    }
+
+    @RequestMapping("/pay.do")
+    @ResponseBody
+    public Msg pay(HttpSession httpSession){
+        Integer userId = this.getCurrentUserId(httpSession);
+        String result = iOrderService.pay(Long.valueOf("1000"), userId, "");
+        return Msg.createSucMsg(result);
     }
 }
