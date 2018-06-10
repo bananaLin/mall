@@ -28,6 +28,11 @@ public class Const {
         int ROLE_ADMIN = 1;//管理员
     }
 
+    public interface secKill{
+        String USE = "USE";
+        String UNUSE = "UNUSE";
+    }
+
     public enum ProductStatusEnum{
         ON_SALE(1,"在线");
         private String value;

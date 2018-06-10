@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mmall.dao.SecKillGoodsMapper" >
+
+  <sql id="Base_Column_List" >
+    id,goods_id,seckill_id,seckill_price,`order`,max_buy,seckill_stock
+  </sql>
+
+  <select id="selectById" resultType="com.mmall.pojo.SecKill" parameterType="java.lang.Integer" >
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM seckill_goods
+    WHERE id = #{id, jdbcType=INTEGER}
+  </select>
+
+  <select id="selectMaxById" resultType="java.lang.Integer" >
+    SELECT max_buy FROM seckill_goods WHERE id = #{id, jdbcType=INTEGER}
+  </select>
+
+  <insert id="insert" parameterType="com.mmall.pojo.SecKill" useGeneratedKeys="true" keyProperty="id" >
+    INSERT INTO seckill_goods(goods_id,seckill_id,seckill_price,`order`,max_buy,seckill_stock)
+    VALUES(#{goodsId,jdbcType=INTEGER}, #{seckillId,jdbcType=INTEGER},
+      #{seckillPrice,jdbcType=INTEGER},#{order,jdbcType=INTEGER},#{maxBuy,jdbcType=INTEGER},#{seckillStock,jdbcType=INTEGER})
+  </insert>
+
+  <update id="update" parameterType="com.mmall.pojo.SecKillGoods">
+    UPDATE seckill_goods
+    <set>
+      <if test="seckillPrice != null">
+        seckill_price = #{seckillPrice,jdbcType=Long}
+      </if>
+      <if test="order != null">
+        `order` = #{order,jdbcType=INTEGER}
+      </if>
+      <if test="maxBuy != null">
+        max_buy = #{maxBuy,jdbcType=INTEGER}
+      </if>
+      <if test="seckillStock != null">
+        seckill_stock = #{seckillStock,jdbcType=VARCHAR}
+      </if>
+    </set>
+    WHERE id = #{id,jdbcType=INTEGER}
+  </update>
+
+</mapper>

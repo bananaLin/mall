@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mmall.dao.SecKillMapper" >
+
+  <sql id="Base_Column_List" >
+    id, title, start_time, end_time, status
+  </sql>
+
+  <select id="selectById" resultType="com.mmall.pojo.SecKill" parameterType="java.lang.Integer" >
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM seckill
+    WHERE id = #{id, jdbcType=INTEGER}
+    AND  `status` = 'USE'
+  </select>
+
+  <select id="selectTodaySecKill" resultType="java.util.List" >
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM seckill
+    WHERE `status` = 'USE'
+    AND DATE_FORMAT(start_time, '%Y-%c-%d') >= CURDATE()
+    AND DATE_FORMAT(end_time, '%Y-%c-%d') &lt;= CURDATE()
+  </select>
+
+  <select id="selectFirstSecKill" resultType="com.mmall.pojo.SecKill" >
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM seckill
+    WHERE `status` = 'USE'
+    AND DATE_FORMAT(start_time, '%Y-%c-%d') >= CURDATE()
+    AND DATE_FORMAT(end_time, '%Y-%c-%d') &lt;= CURDATE()
+    ORDER BY start_time DESC LIMIT 0,1
+  </select>
+
+  <insert id="insert" parameterType="com.mmall.pojo.SecKill" useGeneratedKeys="true" keyProperty="id" >
+    insert into seckill (id, title, start_time, end_time, status)
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR},
+      #{startTime,jdbcType=TIMESTAMP},#{endTime,jdbcType=TIMESTAMP},#{status,jdbcType=VARCHAR})
+  </insert>
+
+  <update id="update" parameterType="com.mmall.pojo.SecKill">
+    UPDATE seckill
+    <if test="status != null">
+      SET STATUS = #{status,jdbcType=VARCHAR}
+    </if>
+    <if test="title != null">
+      SET title = #{title,jdbcType=VARCHAR}
+    </if>
+    <if test="startTime != null">
+      SET start_time = #{startTime,jdbcType=VARCHAR}
+    </if>
+    <if test="endTime != null">
+      SET end_time = #{endTime,jdbcType=VARCHAR}
+    </if>
+    WHERE id = #{id,jdbcType=INTEGER}
+  </update>
+
+</mapper>
